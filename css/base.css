@@ -1405,7 +1405,7 @@ nav {
 .action-call {
   width: 480px;
   display: inline-block;
-  border: 1px solid #3fa47a;
+  border-top: 1px solid #317f5f;
   border-bottom: 1px solid #348764;
   border-left: 1px solid #39956f;
   border-right: 1px solid #39956f;
@@ -1421,8 +1421,8 @@ nav {
     min-height: 45px; }
   .action-call .btn-super-call {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 14px;
+    right: 14px;
     border: 1px solid #f4bf12;
     color: #fff;
     text-shadow: 0 -1px 1px #dab803;
@@ -1475,6 +1475,10 @@ hr {
     border: none; }
   .section-action input[type="text"]:focus {
     outline: none; }
+
+#form-subscribe {
+  padding: 10px;
+  background: #38926c !important; }
 
 .shake {
   -webkit-animation-fill-mode: both;

@@ -485,7 +485,7 @@ $bkgd_color: #3fa47a;
 .action-call {
     width: 480px;
     display: inline-block;
-    border: 1px solid $bkgd_color;
+    border-top: 1px solid darken($bkgd_color, 10%);
     border-bottom: 1px solid darken($bkgd_color, 8%);
     border-left: 1px solid darken($bkgd_color, 4%);
     border-right: 1px solid darken($bkgd_color, 4%);
@@ -502,8 +502,8 @@ $bkgd_color: #3fa47a;
 
     .btn-super-call {
         position: absolute;
-        top: 4px;
-        right: 4px;
+        top: 14px;
+        right: 14px;
         border: 1px solid #f4bf12;
         color: #fff;
         text-shadow: 0 -1px 1px darken(#f3cd03, 5%);
@@ -563,6 +563,11 @@ hr {
     input[type="text"]:focus {
         outline:none;
     }
+}
+
+#form-subscribe {
+    padding: 10px;
+    background: darken($bkgd_color, 5%)!important;
 }
 
 .shake {
