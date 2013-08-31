@@ -1362,7 +1362,7 @@ nav {
         float: right;
         font-weight: 800; }
     .header .header-inner a {
-      color: #235a43;
+      color: #c6e9da;
       text-decoration: none;
       padding-bottom: 20px;
       border-bottom: none;
@@ -1542,13 +1542,14 @@ hr {
     width: 25%;
     float: left; }
     #footer .footer-col h3 {
-      color: #153528; }
+      color: #fff;
+      text-shadow: 0px -1px 3px #317f5f; }
     #footer .footer-col ul {
       padding: 0 !important; }
       #footer .footer-col ul li {
         margin-bottom: 8px; }
         #footer .footer-col ul li a {
-          color: #235a43;
+          color: #c6e9da;
           text-decoration: none; }
         #footer .footer-col ul li a:hover {
           color: white !important; }

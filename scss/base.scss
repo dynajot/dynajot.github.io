@@ -428,7 +428,7 @@ $bkgd_color: #3fa47a;
         }
 
         a {
-            color: darken($bkgd_color, 20%);
+            color: lighten($bkgd_color, 40%);
             text-decoration: none;
             padding-bottom: 20px;
             border-bottom: none;
@@ -599,7 +599,8 @@ hr {
         float:left;
 
         h3 {
-            color: darken($bkgd_color, 30%);
+            color: #fff;
+            text-shadow: 0px -1px 3px darken($bkgd_color, 10%);
         }
 
         ul {
@@ -607,7 +608,7 @@ hr {
             li {
                 margin-bottom: 8px;
                 a {
-                    color: darken($bkgd_color, 20%);
+                    color: lighten($bkgd_color, 40%);
                     text-decoration: none;
                 }
 
