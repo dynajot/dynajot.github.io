@@ -1343,7 +1343,8 @@ nav {
   visibility: visible !important; }
 
 .header {
-  height: 60px; }
+  height: 60px;
+  background: url("../img/splash-bg.png"); }
   .header .header-inner {
     width: 940px;
     margin: 0 auto; }
@@ -1378,10 +1379,8 @@ nav {
       margin-right: 20px; }
 
 .splash {
-  background-color: #42ab7f;
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#42ab7f, endColorstr=#3fa47a);
-  background-image: -moz-linear-gradient(center top, #42ab7f, #3fa47a);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#42ab7f), to(#3fa47a)); }
+  background: #3fa47a;
+  background: url("../img/splash-bg.png"); }
 
 .splash-about {
   margin: 90px auto 0 auto;

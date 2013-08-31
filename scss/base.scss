@@ -404,6 +404,7 @@ $bkgd_color: #3fa47a;
 
 .header {
     height: 60px;
+    background: url('../img/splash-bg.png');
     .header-inner {
         width: 940px;
         margin: 0 auto;
@@ -448,7 +449,8 @@ $bkgd_color: #3fa47a;
 }
 
 .splash {
-    @include linear-gradient(lighten($bkgd_color, 2%), $bkgd_color);
+    background: $bkgd_color;
+    background: url('../img/splash-bg.png');
 }
 
 .splash-about {
