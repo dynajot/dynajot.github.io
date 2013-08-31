@@ -1,0 +1,216 @@
+@import "utils";
+
+@mixin animated($duration: 1s) {
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@include keyframes(tada) {
+  0% { @include vendorize(transform, scale(1)); }
+  10% { @include vendorize(transform, scale(0.9) rotate(-3deg)); }
+  20% { @include vendorize(transform, scale(0.9) rotate(-3deg)); }
+  30% { @include vendorize(transform, scale(1.1) rotate(3deg)); }
+  40% { @include vendorize(transform, scale(1.1) rotate(-3deg)); }
+  50% { @include vendorize(transform, scale(1.1) rotate(3deg)); }
+  60% { @include vendorize(transform, scale(1.1) rotate(-3deg)); }
+  70% { @include vendorize(transform, scale(1.1) rotate(3deg)); }
+  80% { @include vendorize(transform, scale(1.1) rotate(-3deg)); }
+  90% { @include vendorize(transform, scale(1.1) rotate(3deg)); }
+  100% { @include vendorize(transform, scale(1) rotate(0)); }
+}
+
+@mixin tada {
+  @include animated();
+  -webkit-animation-name: tada;
+  -moz-animation-name: tada;
+  -ms-animation-name: tada;
+  animation-name: tada;
+}
+
+// Fade-in / Fade-out
+@-webkit-keyframes fade-in { 0% {opacity: 0;} 100% {opacity: 1;} }
+@-moz-keyframes    fade-in { 0% {opacity: 0;} 100% {opacity: 1;} }
+@keyframes         fade-in { 0% {opacity: 0;} 100% {opacity: 1;} }
+@mixin fade-in {
+  @include animated();
+  -webkit-animation-name: fade-in;
+  -moz-animation-name: fade-in;
+  animation-name: fade-in;
+}
+ 
+@-webkit-keyframes fade-out { 0% {opacity: 1;} 100% {opacity: 0;} }
+@-moz-keyframes    fade-out { 0% {opacity: 1;} 100% {opacity: 0;} }
+@keyframes         fade-out { 0% {opacity: 1;} 100% {opacity: 0;} }
+@mixin fade-out {
+  @include animated();
+  -webkit-animation-name: fade-out;
+  -moz-animation-name: fade-out;
+  animation-name: fade-out;
+}
+ 
+// Fade-up / Fade-down
+@-webkit-keyframes fade-in-up { 0% { opacity: 0; -webkit-transform: translateY(20px); } 100% { opacity: 1; -webkit-transform: translateY(0); } }
+@-moz-keyframes    fade-in-up { 0% { opacity: 0; -moz-transform: translateY(20px);}     100% { opacity: 1; -moz-transform: translateY(0); } }
+@keyframes         fade-in-up { 0% { opacity: 0;  transform: translateY(20px); }        100% { opacity: 1; transform: translateY(0); } }
+@mixin fade-in-up {
+  @include animated();
+  -webkit-animation-name: fade-in-up;
+  -moz-animation-name: fade-in-up;
+  animation-name: fade-in-up;
+}
+@-webkit-keyframes fade-out-down { 0% { opacity: 1; -webkit-transform: translateY(0); } 100% { opacity: 0; -webkit-transform: translateY(20px); } }
+@-moz-keyframes    fade-out-down { 0% { opacity: 1; -moz-transform: translateY(0); }    100% { opacity: 0; -moz-transform: translateY(20px); } }
+@keyframes         fade-out-down { 0% { opacity: 1; transform: translateY(0); }         100% { opacity: 0; transform: translateY(20px); } }
+@mixin fade-out-down {
+  @include animated();
+  -webkit-animation-name: fade-out-down;
+  -moz-animation-name: fade-out-down;
+  animation-name: fade-out-down;
+}
+ 
+// Fade-left
+@-webkit-keyframes fade-in-left { 0% { opacity: 0; -webkit-transform: translateX(-20px); } 100% { opacity: 1; -webkit-transform: translateX(0); } }
+@-moz-keyframes    fade-in-left { 0% { opacity: 0; -moz-transform: translateX(-20px); }    100% { opacity: 1; -moz-transform: translateX(0); } }
+@keyframes         fade-in-left { 0% { opacity: 0; transform: translateX(-20px); }         100% { opacity: 1; transform: translateX(0); } }
+@mixin fade-in-left {
+  @include animated();
+  -webkit-animation-name: fade-in-left;
+  -moz-animation-name: fade-in-left;
+  animation-name: fade-in-left;
+}
+@-webkit-keyframes fade-out-left { 0% { opacity: 1; -webkit-transform: translateX(0); } 100% { opacity: 0; -webkit-transform: translateX(-20px); } }
+@-moz-keyframes    fade-out-left { 0% { opacity: 1; -moz-transform: translateX(0); }    100% { opacity: 0; -moz-transform: translateX(-20px); } }
+@keyframes         fade-out-left { 0% { opacity: 1; transform: translateX(0); }         100% { opacity: 0; transform: translateX(-20px); } }
+@mixin fade-out-left {
+  @include animated();
+  -webkit-animation-name: fade-out-left;
+  -moz-animation-name: fade-out-left;
+  animation-name: fade-out-left;
+}
+ 
+// Fade-right
+@-webkit-keyframes fade-in-right { 0% { opacity: 0; -webkit-transform: translateX(20px); } 100% { opacity: 1; -webkit-transform: translateX(0); } }
+@-moz-keyframes    fade-in-right { 0% { opacity: 0; -moz-transform: translateX(20px); }    100% { opacity: 1; -moz-transform: translateX(0); } }
+@keyframes         fade-in-right { 0% { opacity: 0; transform: translateX(20px); }         100% { opacity: 1; transform: translateX(0); } }
+@mixin fade-in-right {
+  @include animated();
+  -webkit-animation-name: fade-in-right;
+  -moz-animation-name: fade-in-right;
+  animation-name: fade-in-right;
+}
+@-webkit-keyframes fade-out-right { 0% { opacity: 1; -webkit-transform: translateX(0); } 100% { opacity: 0; -webkit-transform: translateX(20px); } }
+@-moz-keyframes    fade-out-right { 0% { opacity: 1; -moz-transform: translateX(0); }    100% { opacity: 0;  -moz-transform: translateX(20px); } }
+@keyframes         fade-out-right { 0% { opacity: 1; transform: translateX(0); }         100% { opacity: 0; transform: translateX(20px); } }
+@mixin fade-out-right {
+  @include animated();
+  -webkit-animation-name: fade-out-right;
+  -moz-animation-name: fade-out-right;
+  animation-name: fade-out-right;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {-webkit-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+
+@-moz-keyframes shake {
+  0%, 100% {-moz-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {-moz-transform: translateX(10px);}
+}
+
+@-ms-keyframes shake {
+  0%, 100% {-ms-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-ms-transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {-ms-transform: translateX(10px);}
+}
+
+@-o-keyframes shake {
+  0%, 100% {-o-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-o-transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {-o-transform: translateX(10px);}
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+@mixin shake {
+  @include animated();
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -ms-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake;
+}
+
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); } 
+  50% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); }
+}
+@-moz-keyframes pulse {
+    0% { -moz-transform: scale(1); }  
+  50% { -moz-transform: scale(1.1); }
+    100% { -moz-transform: scale(1); }
+}
+@-ms-keyframes pulse {
+    0% { -ms-transform: scale(1); } 
+  50% { -ms-transform: scale(1.1); }
+    100% { -ms-transform: scale(1); }
+}
+@-o-keyframes pulse {
+    0% { -o-transform: scale(1); }  
+  50% { -o-transform: scale(1.1); }
+    100% { -o-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); } 
+  50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@mixin pulse {
+  @include animated();
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -ms-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+    }    
+    100% {
+        transform: translateX(0%);
+    }   
+}
+
+@-webkit-keyframes slideRight {
+    0% {
+        -webkit-transform: translateX(-100%);
+    }     
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}
+
+@mixin slideRight {
+  @include animated($duration: .1s);
+    -webkit-animation-name: slideRight;
+  -moz-animation-name: slideRight;
+  -ms-animation-name: slideRight;
+  -o-animation-name: slideRight;
+  animation-name: slideRight;
+}
