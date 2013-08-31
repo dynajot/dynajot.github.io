@@ -498,6 +498,11 @@ $bkgd_color: #3fa47a;
         box-sizing: border-box;
         padding: 6px 8px;
         min-height: 45px;
+        box-shadow: none;
+    }
+
+    input[type="email"]:focus {
+        box-shadow: 0 0 10px lighten($bkgd_color, 10%);
     }
 
     .btn-super-call {

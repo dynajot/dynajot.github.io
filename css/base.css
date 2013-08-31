@@ -1418,7 +1418,10 @@ nav {
     height: 100%;
     box-sizing: border-box;
     padding: 6px 8px;
-    min-height: 45px; }
+    min-height: 45px;
+    box-shadow: none; }
+  .action-call input[type="email"]:focus {
+    box-shadow: 0 0 10px #57bf94; }
   .action-call .btn-super-call {
     position: absolute;
     top: 14px;
