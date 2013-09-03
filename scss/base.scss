@@ -17,6 +17,11 @@ $baseFontSize: 14px;
 $serif-font: 'PT Sans', sans-serif;
 $sans-serif-font: 'PT Sans', sans-serif;
 
+// index page
+
+$bkgd_color: #3fa47a;
+$accent_color: #ece7da;
+
 .hide { 
     display: none;
 }
@@ -73,7 +78,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
 }
 
 body {
-    background: #fff;
+    background: lighten($accent_color, 8%);
     min-height: 100%;
     font-size: 18px;
     line-height: 22px;
@@ -397,11 +402,6 @@ nav {
     -webkit-animation-timing-function: ease-in-out;     
     visibility: visible !important; 
 }
-
-// index page
-
-$bkgd_color: #3fa47a;
-$accent_color: #ece7da;
 
 .header {
     height: 60px;

@@ -1035,7 +1035,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
   box-shadow: 0 0 4px 0px #99ccff; }
 
 body {
-  background: #fff;
+  background: #faf8f5;
   min-height: 100%;
   font-size: 18px;
   line-height: 22px;
