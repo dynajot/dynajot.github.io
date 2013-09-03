@@ -398,9 +398,10 @@ nav {
     visibility: visible !important; 
 }
 
-//index page
+// index page
 
 $bkgd_color: #3fa47a;
+$accent_color: #ece7da;
 
 .header {
     height: 60px;
@@ -410,7 +411,7 @@ $bkgd_color: #3fa47a;
         margin: 0 auto;
 
         .branding {
-            padding: 10px 0;
+            padding: 12px 0;
             float: left;
             font-weight: 800;
             font-size: 36px;
@@ -627,6 +628,27 @@ hr {
                 a:hover {
                     color: #fff!important;
                 }
+            }
+        }
+    }
+}
+
+.inset {
+    background: $accent_color;
+    padding: 10px 20px;
+    box-sizing: border-box!important;
+    width: 100%;
+    @include border-radius();
+
+    .inset-inner {
+        background: #fff;
+
+        pre {
+            padding-top: 20px;
+            padding-left: 15px;
+            
+            span {
+                color: $bkgd_color;
             }
         }
     }

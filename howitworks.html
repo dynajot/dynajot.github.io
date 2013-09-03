@@ -33,73 +33,56 @@
     <![endif]-->
 
     <section class="splash">
-      <div class="header">
+      <div class="header" style="padding-bottom: 20px;">
         <div class="header-inner clearfix">
-            <div class="branding">dynajot</div>
-            <ul class="links">
-              <li><a href="howitworks.html">How It Works</a></li>
-            </ul>
+            <div class="branding"><a href="index.html">dynajot</a></div>
+            <!--ul class="links">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Features</a></li>
+            </ul-->
+
+            <div style="float:right; padding-top: 5px;">        
+              <div class="action-call">
+                <div class="status-success">✓ Success! Welcome to the Beta.</div>
+                <form id="form-subscribe" method="get" action="#">
+                  <input type="email" name="email" placeholder="Enter your email">
+                  <input type="submit" id="btn-submit" class="btn btn-super-call" value="Request to Join the Beta" />
+                </form>
+              </div>
+            </div>
         </div>
-      </div>
-       
-      <div class="splash-about">
-        <h1 style="font-size: 48px;">Real-time Collaboration API</h1>
-        <p>Add real-time collaboration & revision history to your app in seconds.</p>
-        <div>
-          <a href="howitworks.html"><button class="btn mb20 btn-transparent"><!--span style="font-size: 10px;">&#9658;</span-->  &nbsp;learn how it works</button></a>
-        </div>
-        <div class="action-call">
-            <div class="status-success">✓ Success! Welcome to the Beta.</div>
-            <form id="form-subscribe" method="get" action="#">
-              <input type="email" name="email" placeholder="Enter your email">
-              <input type="submit" id="btn-submit" class="btn btn-super-call" value="Request to Join the Beta" />
-            </form>
-        </div>
-      </div>
+      </div> 
     </section>
-    <!--section class="pt15">
-      <h1 style="text-align:center;">Sites Powered by Dynajot</h1>
-      <div class="clearfix" style="width: 940px; margin: 0 auto;">
-      <img src="" class="img-tile" />
-      <img src="" alt="" class="img-tile">
-      <img src="" alt="" class="img-tile">
-      <img src="" alt="" class="img-tile">
-      <img src="" alt="" class="img-tile">
-      </div>
-    </section-->
-    <!--section>
-        <div style="width: 940px; margin: 0 auto;">
-            <hr>
-        </div>
-    </section-->
-    <section class="about" style="margin-top: 80px; margin-bottom: 80px;">
+    <section class="about" style="margin-top: 60px; margin-bottom: 80px;">
       <div class="container" style="width: 940px; margin: 0 auto;">
+        <!--div style="text-align:center; margin-bottom: 60px;">
+          <h1>How it Works</h1>
+        </div-->
         <div class="clearfix reason">
-            <img src="img/oneline.png" />
-            <div style="float: right; width: 580px;">
-            <h2>Get Started with One Line</h2>
-            <p>Getting started is as simple as one line of javascript.
-                <br>
-                It only takes a second and is compatible with all browsers.
-            </p>
+            <h1 style="margin-bottom: 40px;">Include the Dynajot API</h1>
+            <div class="inset">
+              <div class="inset-inner">
+                <pre>&lt;script src=<span>"http://cdn.dynajot.com/js/latest.js"</span>&gt;&lt;/script&gt;
+                </pre>
+              </div>
             </div>
         </div>
         <hr class="mb60 mt60">
         <div class="clearfix reason">
-            <img src="img/collaborate.png" style="border:none; box-shadow:none; width:290px; margin-left: -40px;"/>
-            <div style="float: left; width: 580px;">
-            <h2>Instant Real-time Collaboration</h2>
-            <p>Bind one function to any document node. <br>
-                Just like that, it's synced real-time for all users.</p>
+            <h1 style="margin-bottom: 40px;">Bind to Add Collaboration</h1>
+            <div class="inset">
+              <div class="inset-inner">
+                <pre>$(document).ready(function () {
+    $(<span>"#editor"</span>).collab();
+});
+                </pre>
+              </div>
             </div>
         </div>
         <hr class="mb60 mt60">
         <div class="clearfix reason">
-            <img src="img/history.png" style="border:none; box-shadow:none;" />
-            <div style="float: right; width: 580px;">
-            <h2>Fine-grained Interactive History</h2>
-            <p>Each and every action is part of an accessible history.<br/> Rewind, revisit, or revert changes across users.</p>
-            </div>
+            <h1 style="margin-bottom: 40px;">Share URLs with Real-Time Collaboration & History</h1>
+            <img src="img/howitworks-share.png" style="width:100%; border:none; box-shadow:none;"/>
         </div>
       </div>
     </section>
@@ -160,9 +143,6 @@
 
 
     <script>
-    $(document).ready(function () {
-      $("#editor").collab();
-    });
     $(function () {
 
         var isValidEmail = function (email) {
