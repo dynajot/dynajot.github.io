@@ -89,9 +89,11 @@
             </div>
         </div>
         <hr class="mb60 mt60">
-        <div class="clearfix reason">
+        <div class="clearfix reason" style="position: relative;">
             <h1 style="margin-bottom: 40px;">Share URLs with Real-Time Collaboration & History</h1>
-            <img src="img/howitworks-share.png" style="width:100%; border:none; box-shadow:none;"/>
+            <img src="img/howitworks-share.png" style="width:100%; border:none; box-shadow:none;" id="img-howitworks"/>
+            <div id="live-one" class="collab-demo"></div>
+            <div id="live-two" class="collab-demo"></div>
         </div>
       </div>
     </section>
@@ -176,6 +178,107 @@
             iframe.style.visibility = 'hidden';
             iframe.setAttribute('src', 'iframe_submit.html#'+email);
             document.body.appendChild(iframe);
+        });
+
+        var delayed_write = function ($elems, newContent) {
+          var prop_delay = 1250;
+          for (var i=0; i < $elems.length; i++) {
+            var $elem = $elems[i];
+            (function ($elem, delayMs) {
+              setTimeout(function () {
+                $elem.html(newContent);
+              }, delayMs);
+            })($elem, prop_delay * i);
+          }
+        };
+
+        var player = {};
+        player.codes = {};
+        player.allData = [
+          'y',
+          'ye',
+          'yea',
+          'yeah',
+          'yeah t',
+          'yeah th',
+          'yeah thi',
+          'yeah this',
+          'yeah this i',
+          'yeah this is',
+          'yeah this is r',
+          'yeah this is re',
+          'yeah this is rea',
+          'yeah this is real',
+          'yeah this is reall',
+          'yeah this is really',
+          'yeah this is really c',
+          'yeah this is really co',
+          'yeah this is really coo',
+          'yeah this is really cool',
+          'yeah this is really cool.',
+          'yeah this is really cool. h',
+          'yeah this is really cool. no',
+          'yeah this is really cool. now',
+          'yeah this is really cool. now w',
+          'yeah this is really cool. now we',
+          'yeah this is really cool. now we c',
+          'yeah this is really cool. now we ca',
+          'yeah this is really cool. now we can',
+          'yeah this is really cool. now we can c',
+          'yeah this is really cool. now we can co',
+          'yeah this is really cool. now we can col',
+          'yeah this is really cool. now we can coll',
+          'yeah this is really cool. now we can colla',
+          'yeah this is really cool. now we can collab',
+          'yeah this is really cool. now we can collabo',
+          'yeah this is really cool. now we can collabor',
+          'yeah this is really cool. now we can collabora',
+          'yeah this is really cool. now we can collaborat',
+          'yeah this is really cool. now we can collaborate',
+          'yeah this is really cool. now we can collaborate,',
+          'yeah this is really cool. now we can collaborate, <br>',
+          'yeah this is really cool. now we can collaborate, <br> a',
+          'yeah this is really cool. now we can collaborate, <br> al',
+          'yeah this is really cool. now we can collaborate, <br> all',
+          'yeah this is really cool. now we can collaborate, <br> all ',
+          'yeah this is really cool. now we can collaborate, <br> all t',
+          'yeah this is really cool. now we can collaborate, <br> all th',
+          'yeah this is really cool. now we can collaborate, <br> all tha',
+          'yeah this is really cool. now we can collaborate, <br> all than',
+          'yeah this is really cool. now we can collaborate, <br> all thank',
+          'yeah this is really cool. now we can collaborate, <br> all thanks ',
+          'yeah this is really cool. now we can collaborate, <br> all thanks t',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to ',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to D',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to Dy',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to Dyn',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to Dyna',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to Dynaj',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to Dynajo',
+          'yeah this is really cool. now we can collaborate, <br> all thanks to  Dynajot!',
+        ];
+
+        var playback = _.once(function (textVals) {
+          var actors = [$("#live-one"), $("#live-two")];
+          for (var i=0; i < player.allData.length; i++) {
+            var actionOrData = player.allData[i];
+            (function ($elems, delayMs, content) {
+              setTimeout(function () {
+                delayed_write($elems, content);
+              }, delayMs);
+            })(actors.slice(0), i * 50, actionOrData);
+          }
+        });
+
+        $(window).scroll(function () {
+          var scrollTop = $(window).scrollTop();
+          var height = $(window).height();
+          var triggerHeight = $("#img-howitworks").offset().top + $("#img-howitworks").height()/2;
+
+          if (scrollTop + height >= triggerHeight) {
+            playback();
+          }
         });
     });
     </script>
