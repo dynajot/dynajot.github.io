@@ -55,7 +55,7 @@
         <h1 style="font-size: 48px;">Real-time Collaboration Made Easy</h1>
         <p>Add real-time collaboration to your web app in seconds.</p>
         <div>
-          <a href="howitworks.html"><button class="btn mb20 btn-transparent"><!--span style="font-size: 10px;">&#9658;</span-->  &nbsp;learn how it works</button></a>
+          <a href="#" id="vidButton"><button class="btn mb20 btn-transparent"><!--span style="font-size: 10px;">&#9658;</span-->  &nbsp;See it in action</button></a>
         </div>
         <div class="action-call">
             <div class="status-success">✓ Success! Welcome to the Beta.</div>
@@ -63,6 +63,15 @@
               <input type="email" name="email" placeholder="Enter your email">
               <input type="submit" id="btn-submit" class="btn btn-super-call" value="Request to Join the Beta" />
             </form>
+        </div>
+
+        <div id="vidModal" class="modal fade hide">
+          <div style="postion:relative;">
+            <button type="button" class="close btn btn-editor" data-dismiss="modal" aria-hidden="true" style="position: absolute; right:-12px; top:-10px; color: #4c4c4c; border:1px solid #4c4c4c; font-size:20px; border-radius:20px; width: 30px; height: 30px; font-weight:bold;">&times;</button>
+          </div>
+          <div class="modal-content" style="padding: 10px 10px 5px 10px!important;">
+            <iframe width="540" height="405" src="http://www.youtube.com/embed/uEmbUMUnO1M" frameborder="0" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -164,7 +173,7 @@
     <script src="js/vendor/underscore-min.js"></script>
     <script src="js/vendor/bootstrap-button.js"></script>
     <script src="js/plugins.js"></script>
-    <!--script src="js/vendor/bootstrap-modal.js"></script-->
+    <script src="js/vendor/bootstrap-modal.js"></script>
     <!--script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script-->
 
 
@@ -194,6 +203,18 @@
             iframe.setAttribute('src', 'iframe_submit.html#'+email);
             document.body.appendChild(iframe);
         });
+
+        $("#vidButton").click(function () {
+          $("#vidModal").modal();
+          $("#vidModal iframe").attr('src', 'http://www.youtube.com/embed/uEmbUMUnO1M?autoplay=1');
+        });
+
+        var stopVideo = function () {
+          $("#vidModal iframe").attr('src', 'http://www.youtube.com/embed/uEmbUMUnO1M');
+        };
+
+        $(".modal-backdrop").click(stopVideo);
+        $(".modal .close").click(stopVideo);
     });
     </script>
   </body>
